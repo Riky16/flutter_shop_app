@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_shop_app/constants.dart';
+import 'package:flutter_shop_app/models/product.dart';
 import 'package:flutter_shop_app/screens/home/components/categories.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'components/item_card.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -45,7 +47,23 @@ class HomeScreen extends StatelessWidget {
                     color: kTextColor),
               ),
             ),
-            Categories()
+            Categories(),
+            Expanded(
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+                child: GridView.builder(
+                    itemCount: products.length,
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      mainAxisExtent: kDefaultPadding,
+                      crossAxisSpacing: kDefaultPadding,
+                      childAspectRatio: 0.75,
+                    ),
+                    itemBuilder: (context, index) =>
+                        ItemCard(product: products[index], press: () {})),
+              ),
+            ),
           ],
         ));
   }
