@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_shop_app/constants.dart';
+import 'package:flutter_shop_app/details/details_screen.dart';
 import 'package:flutter_shop_app/models/product.dart';
 import 'package:flutter_shop_app/screens/home/components/categories.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -59,8 +60,15 @@ class HomeScreen extends StatelessWidget {
                     crossAxisSpacing: kDefaultPadding / 2,
                     mainAxisSpacing: kDefaultPadding,
                   ),
-                  itemBuilder: (context, index) =>
-                      ItemCard(product: products[index], press: () {})),
+                  itemBuilder: (context, index) => ItemCard(
+                        product: products[index],
+                        press: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  DetailScreen(product: products[index]),
+                            )),
+                      )),
             ))
           ],
         ));
