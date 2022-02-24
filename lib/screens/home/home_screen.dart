@@ -49,21 +49,19 @@ class HomeScreen extends StatelessWidget {
             ),
             Categories(),
             Expanded(
-              child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: kDefaultPadding),
-                child: GridView.builder(
-                    itemCount: products.length,
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      mainAxisExtent: kDefaultPadding,
-                      crossAxisSpacing: kDefaultPadding,
-                      childAspectRatio: 0.75,
-                    ),
-                    itemBuilder: (context, index) =>
-                        ItemCard(product: products[index], press: () {})),
-              ),
-            ),
+                child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
+              child: GridView.builder(
+                  itemCount: products.length,
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    childAspectRatio: 0.75,
+                    crossAxisSpacing: kDefaultPadding / 2,
+                    mainAxisSpacing: kDefaultPadding,
+                  ),
+                  itemBuilder: (context, index) =>
+                      ItemCard(product: products[index], press: () {})),
+            ))
           ],
         ));
   }

@@ -15,13 +15,15 @@ class ItemCard extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Container(
-          padding: EdgeInsets.all(kDefaultPadding),
-          // height: 180,
-          // width: 150,
-          decoration: BoxDecoration(
-              color: product.color, borderRadius: BorderRadius.circular(16)),
-          child: Image.asset(product.image),
+        Expanded(
+          child: Container(
+            padding: EdgeInsets.all(kDefaultPadding),
+            // height: 180,
+            // width: 150,
+            decoration: BoxDecoration(
+                color: product.color, borderRadius: BorderRadius.circular(16)),
+            child: Image.asset(product.image),
+          ),
         ),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: kDefaultPadding / 4),
