@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_shop_app/details/components/buy_button.dart';
 import 'package:flutter_shop_app/models/product.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_shop_app/constants.dart';
 
 import 'components/color_and_size.dart';
+import 'components/counter.dart';
 import 'components/header_product.dart';
 
 class DetailScreen extends StatelessWidget {
@@ -66,10 +68,20 @@ class DetailScreen extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          SizedBox(
-                            height: 25,
-                          ),
+                          SizedBox(height: 25),
                           ColorAndSize(product: product),
+                          SizedBox(height: 25),
+                          Text(
+                            product.description,
+                            style:
+                                TextStyle(fontSize: 16, color: kTextLightColor),
+                          ),
+                          SizedBox(height: 25),
+                          Counter(),
+                          SizedBox(height: 25),
+                          BuyButton(
+                            product: product,
+                          )
                         ],
                       ),
                     ),
