@@ -2,9 +2,7 @@
 
 Per mettere in pratica alcune conoscenze di Flutter ho deciso di ricreare il design di un'app di Shopping trovata online.
 
-![Screen1](assets/Screenshot/Screen1.png)
-![Screen2](assets/Screenshot/Screen2.png)
-
+![Screen1](assets/Screenshot/FlutterShopAppUI.png)
 
 **SKILL APPRESE:**
 - Flutter
